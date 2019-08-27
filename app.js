@@ -33,4 +33,3 @@ require('./app/routes/alternative.js')(app)
 require('./app/routes/area.js')(app)
 
 // Please, use db scripts to generate and populate DB
-// Teste Codacy
