@@ -15,7 +15,7 @@ public class Exame {
 
 
     public Exame(int aob_exam_serial, int aob_exam_year) {
-        quant++;
+        quant = quant + 1;
         id = quant;
     	this.aob_exam_year = aob_exam_year;
         this.aob_exam_serial = aob_exam_serial;

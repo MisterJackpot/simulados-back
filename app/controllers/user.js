@@ -121,7 +121,7 @@ exports.delete = function (req, res) {
     try {
         User.destroy({where: {id: req.params.id}})
             .then((result) => {
-                if(result == 1){
+                if(result === 1){
                     res.status(200).json({
                         success: true,
                         message: 'User deleted'

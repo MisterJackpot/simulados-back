@@ -162,10 +162,6 @@ public class Parser {
                     .map(s -> s.replaceAll("\\]", ""))                    
                     .map(s -> s.split(","))
                     .collect(Collectors.toList());
-        for(String[] line : list){
-            for(String string : line)
-                string.trim();
-        }
         return list;
     }
     
