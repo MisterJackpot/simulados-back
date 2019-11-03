@@ -4,7 +4,7 @@ var Question = require('../models/question')(db.sequelize, db.Sequelize)
 var Alternative = require('../models/alternative')(db.sequelize, db.Sequelize)
 
 const getQuestions = async (professorId, offset, limit) => {
-    let questions = await Question.findAll({where: {professor_id: professorId}, offset:offset, limit:limit})
+    let questions = await Question.findAll({where: {professor_id: professorId}, offset:offset, limit:limit, order: [["created_at", "desc"]]})
     let total = await Question.findAndCountAll({where: {professor_id: professorId}})
     let alternatives = await Alternative.findAll({where: {question_id: [questions.map(q => q.id)]}})
 
@@ -12,7 +12,7 @@ const getQuestions = async (professorId, offset, limit) => {
 }
 
 const getSubareaQuestions = async (professorId, subareaId, offset, limit) => {
-    let questions = await Question.findAll({where: {professor_id: professorId, subarea_id:subareaId}, offset:offset, limit:limit})
+    let questions = await Question.findAll({where: {professor_id: professorId, subarea_id:subareaId}, offset:offset, limit:limit, order: [["created_at", "desc"]]})
     let total = await Question.findAndCountAll({where: {professor_id: professorId, subarea_id:subareaId}})
     let alternatives = await Alternative.findAll({where: {question_id: [questions.map(q => q.id)]}})
 

@@ -7,4 +7,5 @@ module.exports = (app) => {
     app.get('/questions/:examId?/:lastQuestion?/:amount?', /*passport.authenticate('jwt', {session: false}),*/ questionController.getQuestionsWithPagination)
     app.put('/questions/:id', /*passport.authenticate('jwt', {session:false}), */ questionController.update)
     app.put('/questions/approve', passport.authenticate('jwt', {session: false}), questionController.approve)
+    app.post('/questions', questionController.create)
 }

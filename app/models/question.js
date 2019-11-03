@@ -7,19 +7,19 @@ module.exports = (sequelize, DataTypes) => {
         },
         serial_number: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            // allowNull: false
         },
         professor_id: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            // allowNull: false
         },
         coordinator_id: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            // allowNull: false
         },
         subarea_id: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            // allowNull: false
         },
         statement: {
             type: DataTypes.TEXT('long'),
@@ -32,7 +32,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         approved: {
             type: DataTypes.BOOLEAN,
-            allowNull: true
+            defaultValue: false
         },
         studyMaterials: {
             type: DataTypes.STRING,
